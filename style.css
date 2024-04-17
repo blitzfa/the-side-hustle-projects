@@ -687,6 +687,14 @@ video {
   width: 80%;
 }
 
+.w-\[100px\] {
+  width: 100px;
+}
+
+.w-\[150px\] {
+  width: 150px;
+}
+
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -737,6 +745,11 @@ video {
 
 .border-solid {
   border-style: solid;
+}
+
+.bg-\[\#4B281E\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 40 30 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#EDE7E1\] {
@@ -791,6 +804,10 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .py-6 {
