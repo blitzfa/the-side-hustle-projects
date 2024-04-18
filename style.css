@@ -964,6 +964,10 @@ nav ul {
 }
 
 @media (max-width: 850px) {
+  .max-\[850px\]\:w-\[100\%\] {
+    width: 100%;
+  }
+
   .max-\[850px\]\:flex-col {
     flex-direction: column;
   }
