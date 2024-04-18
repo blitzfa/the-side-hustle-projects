@@ -11,3 +11,93 @@
   font-family: "Avenir-Next-thin";
   src: url(./fonts/AvenirNextCyr-Thin.ttf);
 }
+
+section > *:not(main),
+nav > * {
+  max-width: 72rem;
+}
+
+section:not(:has(main)) {
+  padding: 2rem 0;
+}
+
+nav svg {
+  display: none;
+}
+
+nav ul {
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@media (max-width: 1215px) {
+  section > *:not(main),
+  nav > * {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 1000px) {
+  section > *:not(main),
+  nav > * {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 850px) {
+  html {
+    font-size: 14px;
+  }
+  section > *:not(main),
+  nav > * {
+    max-width: 700px;
+  }
+
+  nav svg[data-show="true"] {
+    display: block;
+  }
+  nav svg[data-show="false"] {
+    display: none;
+  }
+
+  ul + svg.hamburger-icon[data-show="true"] {
+    top: 100% !important;
+  }
+  ul + svg.hamburger-icon[data-show="false"] {
+    top: -1000% !important;
+  }
+
+  nav ul {
+    position: absolute;
+    top: -250%;
+    flex-direction: column;
+    background-color: aliceblue;
+    width: 100%;
+    left: 0;
+    padding: 2rem;
+  }
+  .videos iframe {
+    width: 100% !important;
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 650px) {
+  section > *:not(main),
+  nav > * {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 520px) {
+  section > *:not(main),
+  nav > * {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 420px) {
+  section > *:not(main),
+  nav > * {
+    max-width: 350px;
+  }
+}

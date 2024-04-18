@@ -10,7 +10,7 @@
 
 <body>
     <nav class="bg-[#EDE7E1] font-Avenir-r fixed w-[100%] top-0">
-        <div class="container m-auto max-w-6xl py-6 flex justify-between text-lg">
+        <div class=" m-auto  py-6 flex justify-between text-lg items-center">
             <a href="../">
                 <h1 class="flex justify-center items-center">
                     <img src="../images/logo(without bg) 2.png" alt="Logo">
@@ -39,9 +39,39 @@
                     </a>
                 </li>
             </ul>
+            <svg data-show="true" class="hamburger-icon" width="30px" height="30px" viewBox="0 0 24 24" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>Menu</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Menu">
+                        <rect id="Rectangle" fill-rule="nonzero" x="0" y="0" width="24" height="24">
+
+                        </rect>
+                        <line x1="5" y1="7" x2="19" y2="7" id="Path" stroke="#0C0310" stroke-width="2"
+                            stroke-linecap="round">
+
+                        </line>
+                        <line x1="5" y1="17" x2="19" y2="17" id="Path" stroke="#0C0310" stroke-width="2"
+                            stroke-linecap="round">
+
+                        </line>
+                        <line x1="5" y1="12" x2="19" y2="12" id="Path" stroke="#0C0310" stroke-width="2"
+                            stroke-linecap="round">
+
+                        </line>
+                    </g>
+                </g>
+            </svg>
+            <svg data-show="false" class="close-icon" width="30px" height="30px" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="Menu / Close_MD">
+                    <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#000000" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+            </svg>
         </div>
     </nav>
-    <section class="min-h-[86vh] container mx-auto pt-[9rem]">
+    <section class="min-h-[86vh]  mx-auto pt-[9rem]">
         <div class="w-[80%] mx-auto flex gap-[2rem] flex-col justify-center" d>
             <h3 class="font-serif text-3xl">Contact</h3>
             <p class="font-Avenir-r text-xl">
@@ -51,13 +81,13 @@
                 Please complete the form below
             </p>
             <form class="flex flex-col gap-4 mb-8">
-                <div class="flex gap-4">
-                    <div class="flex flex-col w-[50%]">
+                <div class="flex gap-4 justify-between">
+                    <div class="flex flex-col w-[45%]">
                         <label for="fname">First Name</label>
                         <input class="border-solid border-2 border-[rgba(0,0,0, 0.25)]  p-2 mt-4 bg-[#F4F4F4]"
                             type="text" name="fname" id="fname">
                     </div>
-                    <div class="flex flex-col w-[50%]">
+                    <div class="flex flex-col w-[45%]">
                         <label for="lname">Last Name</label>
                         <input class="border-solid border-2 border-[rgba(0,0,0, 0.25)] p-2 mt-4 bg-[#F4F4F4]"
                             type="text" name="lname" id="lname">
@@ -242,6 +272,7 @@
 
         </a>
     </footer>
+    <script src="../app.js"></script>
 </body>
 
 </html>
