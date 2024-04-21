@@ -71,11 +71,15 @@
             </svg>
         </div>
     </nav>
-    <section id="hero" class="h-screen bg-[url('./images/hero.png')] bg-no-repeat bg-cover">
-        <div class=" m-auto   flex justify-center items-center flex-col h-[100%]">
+    <section id="hero" class="h-screen bg-no-repeat bg-cover relative">
+        <!-- <div class=" m-auto   flex justify-center items-center flex-col h-[100%]">
             <img src="./images/logo(without bg) 1.png">
             <div class="text-lg">The Side Hustle Projects</div>
-        </div>
+        </div> -->
+        <video class="hero-video absolute w-[100%] h-[100%] top-0 left-0 object-cover z-[-1]" loop muted autoplay
+            playsinline>
+            <source src="./images/hero-video.mp4" type="video/mp4">
+        </video>
     </section>
     <section class="bg-[url('./images/banner.png')] bg-no-repeat bg-cover h-[10rem] bg-center">
         <main class="flex justify-center items-center w-[100%] h-[100%] text-2xl bg-[rgba(0,0,0,0.2)]">
@@ -83,7 +87,7 @@
         </main>
     </section>
     <section
-        class="bg-[url('./images/section3_bg.png')] min-h-[120vh] bg-no-repeat bg-cover text-white font-Avenir-t text-[1.2rem] flex">
+        class="bg-[url('./images/section3_bg.webp')] min-h-[120vh] bg-no-repeat bg-cover text-white font-Avenir-t text-[1.2rem] flex">
         <div class=" m-auto   h-[100%]">
             <div class="flex gap-8 flex-col w-[45%] max-[850px]:w-[100%] h-[100%] justify-center ">
                 <p>
@@ -120,9 +124,9 @@
         </main>
     </section>
     <section
-        class="bg-[url('./images/section5_bg.png')] min-h-[120vh] bg-no-repeat bg-cover text-white font-Avenir-t text-[1.2rem] flex">
-        <div class=" m-auto   h-[100%]">
-            <div class="flex gap-8 flex-col w-[45%] max-[850px]:w-[100%] h-[100%] justify-center ">
+        class="bg-[url('./images/section5_bg.webp')] min-h-[120vh] bg-no-repeat bg-cover text-white font-Avenir-t text-[1.2rem] flex">
+        <div class=" m-auto min-[850px]:pt-[30%] h-[100%]">
+            <div class="flex gap-8 flex-col max-[850px]:w-[100%] h-[100%] justify-center ">
                 <p>
                     The American Architect, Daniel Burnham rightly said, “Make no little plans, as they have no magic to
                     stir men’s blood”. So the real question is, “Can you dream big?”. Hopefully, your dreams and your
@@ -137,15 +141,15 @@
         </div>
 
     </section>
-    <section class="bg-[url('./images/banner.png')] bg-no-repeat bg-cover h-[10rem] bg-center">
+    <section class="bg-[url('./images/banner3.webp')] bg-no-repeat bg-cover h-[10rem] bg-center">
         <main class="flex justify-center items-center w-[100%] h-[100%] text-2xl bg-[rgba(0,0,0,0.2)]">
             <h1 class="font-serif text-white font-bold text-center"> WOULD I QUALIFY FOR THE SIDE HUSTLE PROJECTS?</h1>
         </main>
     </section>
     <section
-        class="bg-[url('./images/section5_bg.png')] min-h-[120vh] bg-no-repeat bg-cover text-white font-Avenir-t text-[1.2rem] flex">
-        <div class=" m-auto h-[100%]">
-            <div class="flex gap-8 flex-col w-[45%] max-[850px]:w-[100%] h-[100%] justify-center ">
+        class="bg-[url('./images/section7_bg.webp')] min-h-[120vh] bg-no-repeat bg-cover text-white font-Avenir-t text-[1.2rem] flex">
+        <div class=" m-auto h-[100%] min-[850px]:pb-[30%]">
+            <div class="flex gap-8 flex-col max-[850px]:w-[100%] h-[100%] justify-center ">
                 <p>
                     The Side Hustle Projects is a community for a select group of entrepreneurs committed to being
                     honest about their goals and accomplishing them. Mentorship is a valuable asset to have especially

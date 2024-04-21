@@ -71,7 +71,7 @@
             </svg>
         </div>
     </nav>
-    <section class="min-h-[86vh]  mx-auto pt-[9rem]">
+    <section class="mx-auto pt-[9rem]">
         <div class="mx-auto flex gap-[2rem] flex-col justify-center">
             <p class="text-3xl text-center mx-auto h-[max-content] font-bold w-[70%] text-[#4B281E]">
                 IS YOUR LIFE SIGNIFICANT IN YOUR OPINION?
@@ -98,7 +98,16 @@
             </p>
 
         </div>
-
+    </section>
+    <section class="mx-auto pt-[2rem]">
+        <div class="mx-auto flex gap-[2rem] flex-col justify-center">
+            <h1 class="text-2xl font-bold uppercase text-center text-[#4B281E]">
+                Recommended Literature
+            </h1>
+            <div class="flex flex-col" id="recommendations">
+                <div class="max-[850px]:w-[45%] "></div>
+            </div>
+        </div>
     </section>
     <footer class="bg-[#EDE7E1] h-[14vh] flex justify-center items-center">
         <a href="#">
@@ -258,6 +267,75 @@
         </a>
     </footer>
     <script src="../app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script>
+        // Fetch the CSV data
+        fetch('Book1.csv')
+            .then(response => response.text())
+            .then(csvData => processData(csvData))
+            .catch(error => console.error('Error fetching CSV data:', error));
+
+        const allVideos = document.querySelector("#allVideos");
+
+
+        function processData(allText) {
+
+            let parsedData = Papa.parse(allText, {
+                header: true,
+                dynamicTyping: true,
+                skipEmptyLines: true,
+                complete: function (results) {
+                    let lines = results.data
+                    let result = {};
+
+                    for (let i = 0; i < lines.length; i++) {
+                        let item = lines[i];
+                        let key = item.Title;
+
+                        if (!result[key]) {
+                            result[key] = [];
+                        }
+
+                        result[key].push({
+                            "Book Image Name": item["Book Image Name"],
+                            "Book Url": item["Book Url"]
+                        });
+                    }
+                    htmlStr = ""
+                    Object.entries(result).forEach(entry => {
+                        let title = entry[0];
+                        htmlStr += "<div>"
+                        //         <h2 class="text-xl font-bold uppercase my-8">Title</h2>
+                        // <div class="flex gap-[2rem]">
+                        //     <a class="w-[33%] h-[300px]">
+                        //         <img src="images/Image1.jpg" alt="" class="w-[100%] h-[100%] object-contain">
+                        //     </a>
+                        //     <a class="w-[33%] h-[300px]">
+                        //         <img src="images/Image1.jpg" alt="" class="w-[100%] h-[100%] object-contain">
+                        //     </a>
+                        //     <a class="w-[33%] h-[300px]">
+                        //         <img src="images/Image1.jpg" alt="" class="w-[100%] h-[100%] object-contain">
+                        //     </a>
+                        // </div>
+                        htmlStr += `<h2 class="text-xl font-bold uppercase my-8">${title}</h2>`
+                        htmlStr += `<div class="flex gap-[2rem] flex-wrap justify-between">`
+                        entry[1].forEach(book => {
+                            htmlStr += `
+                            <a class="w-[22%] max-[850px]:w-[45%] h-[300px]" href=${book["Book Url"]}>
+                                <img src=${"./images/" + book["Book Image Name"]} alt="" class="w-[100%] h-[100%] object-contain">
+                            </a>
+                            `
+                        })
+                        htmlStr += "</div></div>"
+                    })
+                    console.log(htmlStr)
+                    const recommendations = document.querySelector("#recommendations");
+                    recommendations.innerHTML = htmlStr
+                }
+            });
+        }
+
+    </script>
 </body>
 
 </html>

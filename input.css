@@ -12,13 +12,17 @@
   src: url(./fonts/AvenirNextCyr-Thin.ttf);
 }
 
-section > *:not(main),
+section > *:not(main, video),
 nav > * {
   max-width: 72rem;
 }
 
 section:not(:has(main)) {
   padding: 2rem 0;
+}
+
+nav {
+  z-index: 10;
 }
 
 nav svg {
@@ -30,14 +34,14 @@ nav ul {
 }
 
 @media (max-width: 1215px) {
-  section > *:not(main),
+  section > *:not(main, video),
   nav > * {
     max-width: 900px;
   }
 }
 
 @media (max-width: 1000px) {
-  section > *:not(main),
+  section > *:not(main, video),
   nav > * {
     max-width: 800px;
   }
@@ -47,7 +51,7 @@ nav ul {
   html {
     font-size: 14px;
   }
-  section > *:not(main),
+  section > *:not(main, video),
   nav > * {
     max-width: 700px;
   }
@@ -82,21 +86,21 @@ nav ul {
 }
 
 @media (max-width: 650px) {
-  section > *:not(main),
+  section > *:not(main, video),
   nav > * {
     max-width: 500px;
   }
 }
 
 @media (max-width: 520px) {
-  section > *:not(main),
+  section > *:not(main, video),
   nav > * {
     max-width: 400px;
   }
 }
 
 @media (max-width: 420px) {
-  section > *:not(main),
+  section > *:not(main, video),
   nav > * {
     max-width: 350px;
   }
