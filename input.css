@@ -12,6 +12,16 @@
   src: url(./fonts/AvenirNextCyr-Thin.ttf);
 }
 
+#videos iframe {
+  width: 30%;
+  height: 275px;
+}
+
+#videos iframe:nth-of-type(2) {
+  width: 50%;
+  height: 350px;
+}
+
 section > *:not(main, video),
 nav > * {
   max-width: 72rem;

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Side Hustle Projects</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo(without bg) 1.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -102,17 +103,14 @@
                 <p>
                     Let us guess, you’ve thought of starting something of your own but lack the resources (especially
                     capital) or skills (especially business and leadership) to get started and build a successful
-                    business.
-                    If you’ve started something of your own in the past or continue to do so, but you understand the
-                    risks
-                    involved in running a business and would like to create a passive income-generating, low-cost
-                    business
-                    in parallel to your “traditional” business.
+                    business. If you’ve started something of your own in the past or continue to do so, but you
+                    understand the risks involved in running a business and would like to create a passive
+                    income-generating, low-cost business in parallel to your “traditional” business.
                 </p>
                 <p>
                     If that’s you, The Side Hustle Projects community is your place to collaborate and get mentored by
                     industry executives to build your side hustle in addition to your traditional careers and
-                    businesses. 
+                    businesses.
                 </p>
             </div>
         </div>
@@ -134,7 +132,7 @@
                     are emotionally connected to? In his book, Dr. Jim Collins, a Stanford University Professor, points
                     out that one must have at most 3-5 emotionally connected goals/dreams. Remember, it should be
                     something you are emotionally connected to. Being precise is your road to having a well-formed plan
-                    to reach your goals. 
+                    to reach your goals.
                 </p>
 
             </div>
@@ -155,9 +153,8 @@
                     honest about their goals and accomplishing them. Mentorship is a valuable asset to have especially
                     mentorship from successful entrepreneurs, it is also a time-consuming proposition. For this reason,
                     The Side Hustle Projects is highly selective of the individuals that gain access to it. The access
-                    does not require a fee, this is not a paid program. The opportunity is only provided to
-                    individuals/couples who can showcase their potential through a series of discussions with the
-                    community.
+                    does not require a fee. The opportunity is only provided to individuals/couples who can showcase
+                    their potential through a series of discussions with the community.
                 </p>
             </div>
         </div>
@@ -168,8 +165,9 @@
             Get a peek into the discussions that galvanize you to act. After all, “God is in the details” - Mies
             ver der Rohe.
         </h1>
-        <div class="  mx-auto w-[100%] flex justify-center gap-4 my-[4rem] items-center max-[850px]:flex-col">
-            <iframe class="w-[30%] h-[275px]" src="https://www.youtube.com/embed/gbLmku5QACM?si=19idLeh9MaF4JdlJ"
+        <div id="videos"
+            class="  mx-auto w-[100%] flex justify-center gap-4 my-[4rem] items-center max-[850px]:flex-col">
+            <!-- <iframe class="w-[30%] h-[275px]" src="https://www.youtube.com/embed/gbLmku5QACM?si=19idLeh9MaF4JdlJ"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -180,7 +178,7 @@
             <iframe class="w-[30%] h-[275px]" src=" https://www.youtube.com/embed/gbLmku5QACM?si=19idLeh9MaF4JdlJ"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
         </div>
         <h1 class="text-3xl text-center mt-[2rem] mx-auto h-[max-content] font-bold w-[70%]">
             <a href="./videos/">
@@ -346,6 +344,38 @@
         </a>
     </footer>
     <script src="./app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script>
+        // Fetch the CSV data
+        fetch('homepage_videos.csv')
+            .then(response => response.text())
+            .then(csvData => processData(csvData))
+            .catch(error => console.error('Error fetching CSV data:', error));
+
+        const videos = document.querySelector("#videos");
+
+
+        function processData(allText) {
+
+            let parsedData = Papa.parse(allText, {
+                header: true,
+                dynamicTyping: true,
+                skipEmptyLines: true,
+                complete: function (results) {
+                    let lines = results.data
+                    let htmlStr = ""
+                    console.log(lines)
+                    lines.forEach((line) => {
+                        htmlStr += `
+                            ${line["Video Embed"]}
+                        `
+                    })
+                    videos.innerHTML = htmlStr
+                }
+            });
+        }
+
+    </script>
 </body>
 
 </html>
