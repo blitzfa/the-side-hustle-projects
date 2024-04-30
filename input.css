@@ -17,6 +17,11 @@
   height: 275px;
 }
 
+section,
+div {
+  background-position: center;
+}
+
 #videos iframe:nth-of-type(2) {
   width: 50%;
   height: 350px;
